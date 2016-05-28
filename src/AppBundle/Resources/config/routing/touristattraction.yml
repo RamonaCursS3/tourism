@@ -1,0 +1,24 @@
+touristattraction_index:
+    path:     /
+    defaults: { _controller: "AppBundle:TouristAttraction:index" }
+    methods:  GET
+
+touristattraction_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:TouristAttraction:show" }
+    methods:  GET
+
+touristattraction_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:TouristAttraction:new" }
+    methods:  [GET, POST]
+
+touristattraction_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:TouristAttraction:edit" }
+    methods:  [GET, POST]
+
+touristattraction_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:TouristAttraction:delete" }
+    methods:  DELETE

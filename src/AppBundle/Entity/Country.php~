@@ -1,0 +1,39 @@
+<?php
+
+namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+
+/**
+ * Country
+ * 
+ * @ORM\Table(name="country")
+ * @ORM\Entity()
+ * @ORM\HasLifecycleCallbacks()
+ */
+class Country
+{
+    /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    
+    /**
+     * @ORM\Column(name="name", type="string")
+    */
+    private $name;
+    
+    /**
+     * @ORM\Column(name="language", type="string")
+    */
+    private $language;
+    
+    /**
+     * @ORM\Column(name="religion", type="string")
+    */
+    private $religion;
+}
+

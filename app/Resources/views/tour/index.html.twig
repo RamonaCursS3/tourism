@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tour list</h1>
+<div class="table-responsive">
+    <table class="table table-hover records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Length</th>
+                <th>Travel_type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tour in tours %}
+            <tr>
+                <td><a href="{{ path('tour_show', { 'id': tour.id }) }}">{{ tour.id }}</a></td>
+                <td>{{ tour.name }}</td>
+                <td>{{ tour.description }}</td>
+                <td>{{ tour.length }}</td>
+                <td>{{ tour.traveltype }}</td>
+                <td>
+                    <a class="btn btn-sm btn-info" href="{{ path('tour_show', { 'id': tour.id }) }}">
+                        <span class="glyphicon glyphicon-share"></span> Show</a>
+
+                    <a class="btn btn-sm btn-default" href="{{ path('tour_edit', { 'id': tour.id }) }}">
+                        <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<a class="btn btn-success" href="{{ path('tour_new') }}">Create a new entry</a>
+
+{% endblock %}

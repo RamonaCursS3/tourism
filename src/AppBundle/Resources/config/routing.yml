@@ -1,0 +1,15 @@
+app_touristattraction:
+    resource: "@AppBundle/Resources/config/routing/touristattraction.yml"
+    prefix:   /touristattraction
+app_city:
+    resource: "@AppBundle/Resources/config/routing/city.yml"
+    prefix:   /city
+app_country:
+    resource: "@AppBundle/Resources/config/routing/country.yml"
+    prefix:   /country
+app_hotel:
+    resource: "@AppBundle/Resources/config/routing/hotel.yml"
+    prefix:   /hotel
+app_tour:
+    resource: "@AppBundle/Resources/config/routing/tour.yml"
+    prefix:   /tour

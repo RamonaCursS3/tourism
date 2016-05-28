@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>TouristAttraction list</h1>
+<div class="table-responsive">
+    <table class="table table-hover records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Contact_details</th>
+                <th>Website</th>
+                <th>Opening_hours</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for touristAttraction in touristAttractions %}
+            <tr>
+                <td><a href="{{ path('touristattraction_show', { 'id': touristAttraction.id }) }}">{{ touristAttraction.id }}</a></td>
+                <td>{{ touristAttraction.name }}</td>
+                <td>{{ touristAttraction.description }}</td>
+                <td>{{ touristAttraction.contactdetails }}</td>
+                <td>{{ touristAttraction.website }}</td>
+                <td>{{ touristAttraction.openinghours }}</td>
+                <td>
+                    <a class="btn btn-sm btn-info" href="{{ path('touristattraction_show', { 'id': touristAttraction.id }) }}">
+                        <span class="glyphicon glyphicon-share"></span> Show</a>
+
+                    <a class="btn btn-sm btn-default" href="{{ path('touristattraction_edit', { 'id': touristAttraction.id }) }}">
+                        <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<a class="btn btn-success" href="{{ path('touristattraction_new') }}">Create a new entry</a>
+
+{% endblock %}

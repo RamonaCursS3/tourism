@@ -1,0 +1,52 @@
+<?php
+
+namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+
+/**
+ * Hotel
+ * 
+ * @ORM\Table(name="hotel")
+ * @ORM\Entity()
+ * @ORM\HasLifecycleCallbacks()
+ */
+class Hotel
+{
+    /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    
+    /**
+     * @ORM\Column(name="name", type="string")
+    */
+    private $name;
+    
+    /**
+     * @ORM\Column(name="star_rating", type="integer")
+    */
+    private $star_rating;
+    
+    /**
+     * @ORM\Column(name="price_range", type="string")
+    */
+    private $price_range;
+    
+    /**
+     * 
+     * @ORM\ManyToMany(targetEntity="City", inversedBy="hotels")
+     * 
+     */
+    private $cities;
+    
+    /**
+     * 
+     * @ORM\ManyToOne(targetEntity="Tour", inversedBy="hotels")
+     * 
+     */
+    private $tour;
+}
+

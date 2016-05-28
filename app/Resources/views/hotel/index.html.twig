@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Hotel list</h1>
+<div class="table-responsive">
+    <table class="table table-hover records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Star_rating</th>
+                <th>Price_range</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hotel in hotels %}
+            <tr>
+                <td><a href="{{ path('hotel_show', { 'id': hotel.id }) }}">{{ hotel.id }}</a></td>
+                <td>{{ hotel.name }}</td>
+                <td>{{ hotel.starrating }}</td>
+                <td>{{ hotel.pricerange }}</td>
+                <td>
+                    <a class="btn btn-sm btn-info" href="{{ path('hotel_show', { 'id': hotel.id }) }}">
+                        <span class="glyphicon glyphicon-share"></span> Show</a>
+
+                    <a class="btn btn-sm btn-default" href="{{ path('hotel_edit', { 'id': hotel.id }) }}">
+                        <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<a class="btn btn-success" href="{{ path('hotel_new') }}">Create a new entry</a>
+
+{% endblock %}

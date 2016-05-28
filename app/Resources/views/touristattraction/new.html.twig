@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% form_theme form ':Form:fields.html.twig' %}
+{% block body %}
+    <h1>TouristAttraction creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input class="btn btn-success" type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <a class="btn btn-info" href="{{ path('touristattraction_index') }}">Back to the list</a>
+{% endblock %}

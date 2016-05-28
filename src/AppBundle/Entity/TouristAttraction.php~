@@ -1,0 +1,68 @@
+<?php
+
+namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+
+
+/**
+ * TouristAttraction
+ * 
+ * @ORM\Table(name="tourist_attraction")
+ * @ORM\Entity()
+ * @ORM\HasLifecycleCallbacks()
+ */
+class TouristAttraction
+{
+    /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    
+    /**
+     * @ORM\Column(name="name", type="string")
+    */
+    private $name;
+    
+    /**
+     * @ORM\Column(name="description", type="string")
+     */
+    private $description;
+    
+    /**
+     * @ORM\Column(name="contact_details", type="string")
+     */
+    private $contact_details;
+    
+    /**
+     * @ORM\Column(name="website", type="string")
+     */
+    private $website;
+    
+    /**
+     * @ORM\Column(name="opening_hours", type="string")
+     */
+    private $opening_hours;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\ManyToOne(targetEntity="City", inversedBy="tourist_attractions")
+     * @ORM\JoinColumn(name="tourist_attraction_id", referencedColumnName="id", onDelete="SET NULL")
+     */
+    private $city;
+    
+    /**
+     * 
+     * @ORM\ManyToOne(targetEntity="Tour", inversedBy="tourist_attractions")
+     * 
+     */
+    private $tour; 
+    
+    
+    
+}
+
+

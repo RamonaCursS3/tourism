@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tour</h1>
+<div class="col-lg-4">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tour.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ tour.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ tour.description }}</td>
+            </tr>
+            <tr>
+                <th>Length</th>
+                <td>{{ tour.length }}</td>
+            </tr>
+            <tr>
+                <th>Travel_type</th>
+                <td>{{ tour.traveltype }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    <a class="btn btn-info" href="{{ path('tour_index') }}">Back to the list</a>
+
+    <a class="btn btn-warning" href="{{ path('tour_edit', { 'id': tour.id }) }}">Edit</a>
+
+    {{ form_start(delete_form) }}
+        <input class="btn btn-danger" type="submit" value="Delete">
+    {{ form_end(delete_form) }}
+</div>
+{% endblock %}

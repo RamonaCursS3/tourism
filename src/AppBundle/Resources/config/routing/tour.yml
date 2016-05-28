@@ -1,0 +1,24 @@
+tour_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Tour:index" }
+    methods:  GET
+
+tour_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Tour:show" }
+    methods:  GET
+
+tour_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Tour:new" }
+    methods:  [GET, POST]
+
+tour_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Tour:edit" }
+    methods:  [GET, POST]
+
+tour_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Tour:delete" }
+    methods:  DELETE
