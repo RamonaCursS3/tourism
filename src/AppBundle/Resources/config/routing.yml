@@ -13,3 +13,4 @@ app_hotel:
 app_tour:
     resource: "@AppBundle/Resources/config/routing/tour.yml"
     prefix:   /tour
+

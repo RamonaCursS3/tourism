@@ -21,23 +21,23 @@ class __TwigTemplate_bf15c31d2fb350b6cc3f5bdf7e97038673ddd524b21725793e307aae930
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d951633687f994789880732cf6c1c15695439e799450c05f5594b0d6c310b627 = $this->env->getExtension("native_profiler");
-        $__internal_d951633687f994789880732cf6c1c15695439e799450c05f5594b0d6c310b627->enter($__internal_d951633687f994789880732cf6c1c15695439e799450c05f5594b0d6c310b627_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "touristattraction/new.html.twig"));
+        $__internal_38a8dfb972db4e8dc781deb940fd764f123af36e34992b2ed1effeebd11335ba = $this->env->getExtension("native_profiler");
+        $__internal_38a8dfb972db4e8dc781deb940fd764f123af36e34992b2ed1effeebd11335ba->enter($__internal_38a8dfb972db4e8dc781deb940fd764f123af36e34992b2ed1effeebd11335ba_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "touristattraction/new.html.twig"));
 
         // line 2
         $this->env->getExtension('form')->renderer->setTheme((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), array(0 => ":Form:fields.html.twig"));
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_d951633687f994789880732cf6c1c15695439e799450c05f5594b0d6c310b627->leave($__internal_d951633687f994789880732cf6c1c15695439e799450c05f5594b0d6c310b627_prof);
+        $__internal_38a8dfb972db4e8dc781deb940fd764f123af36e34992b2ed1effeebd11335ba->leave($__internal_38a8dfb972db4e8dc781deb940fd764f123af36e34992b2ed1effeebd11335ba_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_3acfe33c415160ae910f342168138e10653bacc999e5b8837579f61d8ff4d445 = $this->env->getExtension("native_profiler");
-        $__internal_3acfe33c415160ae910f342168138e10653bacc999e5b8837579f61d8ff4d445->enter($__internal_3acfe33c415160ae910f342168138e10653bacc999e5b8837579f61d8ff4d445_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_3b7cb440b98d5636bbec1880f331788dc991d895aacbc38c46dc06c383abebf9 = $this->env->getExtension("native_profiler");
+        $__internal_3b7cb440b98d5636bbec1880f331788dc991d895aacbc38c46dc06c383abebf9->enter($__internal_3b7cb440b98d5636bbec1880f331788dc991d895aacbc38c46dc06c383abebf9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>TouristAttraction creation</h1>
@@ -62,7 +62,7 @@ class __TwigTemplate_bf15c31d2fb350b6cc3f5bdf7e97038673ddd524b21725793e307aae930
         echo "\">Back to the list</a>
 ";
         
-        $__internal_3acfe33c415160ae910f342168138e10653bacc999e5b8837579f61d8ff4d445->leave($__internal_3acfe33c415160ae910f342168138e10653bacc999e5b8837579f61d8ff4d445_prof);
+        $__internal_3b7cb440b98d5636bbec1880f331788dc991d895aacbc38c46dc06c383abebf9->leave($__internal_3b7cb440b98d5636bbec1880f331788dc991d895aacbc38c46dc06c383abebf9_prof);
 
     }
 

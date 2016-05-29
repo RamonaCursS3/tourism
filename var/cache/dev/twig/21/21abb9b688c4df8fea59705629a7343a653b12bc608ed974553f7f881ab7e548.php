@@ -21,23 +21,23 @@ class __TwigTemplate_4a7e0dd1705ec3f1c142c6c0a5615eeb13f3f45487d16815f417cbaa1b4
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1843f952662c7ed33f44f44a295277225ea3501693811f3a795c08a453826f35 = $this->env->getExtension("native_profiler");
-        $__internal_1843f952662c7ed33f44f44a295277225ea3501693811f3a795c08a453826f35->enter($__internal_1843f952662c7ed33f44f44a295277225ea3501693811f3a795c08a453826f35_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tour/new.html.twig"));
+        $__internal_9cb17af33e603e831aae7817e0ddb4e4da6ff367c7eb1ad69f9f7be9385b5cd3 = $this->env->getExtension("native_profiler");
+        $__internal_9cb17af33e603e831aae7817e0ddb4e4da6ff367c7eb1ad69f9f7be9385b5cd3->enter($__internal_9cb17af33e603e831aae7817e0ddb4e4da6ff367c7eb1ad69f9f7be9385b5cd3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tour/new.html.twig"));
 
         // line 2
         $this->env->getExtension('form')->renderer->setTheme((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), array(0 => ":Form:fields.html.twig"));
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_1843f952662c7ed33f44f44a295277225ea3501693811f3a795c08a453826f35->leave($__internal_1843f952662c7ed33f44f44a295277225ea3501693811f3a795c08a453826f35_prof);
+        $__internal_9cb17af33e603e831aae7817e0ddb4e4da6ff367c7eb1ad69f9f7be9385b5cd3->leave($__internal_9cb17af33e603e831aae7817e0ddb4e4da6ff367c7eb1ad69f9f7be9385b5cd3_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_c2ce004d6d6bfea0b0c658ead35e43dc5ef448c0df05b228af1a879d9007b4d7 = $this->env->getExtension("native_profiler");
-        $__internal_c2ce004d6d6bfea0b0c658ead35e43dc5ef448c0df05b228af1a879d9007b4d7->enter($__internal_c2ce004d6d6bfea0b0c658ead35e43dc5ef448c0df05b228af1a879d9007b4d7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_6568a905a10ce450a350b3a9074e24b994e3c9f503abb98de0ebba71b504f3bb = $this->env->getExtension("native_profiler");
+        $__internal_6568a905a10ce450a350b3a9074e24b994e3c9f503abb98de0ebba71b504f3bb->enter($__internal_6568a905a10ce450a350b3a9074e24b994e3c9f503abb98de0ebba71b504f3bb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Tour creation</h1>
@@ -50,7 +50,7 @@ class __TwigTemplate_4a7e0dd1705ec3f1c142c6c0a5615eeb13f3f45487d16815f417cbaa1b4
         // line 7
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo "
-        <input type=\"submit\" value=\"Create\" />
+        <input class=\"btn btn-success\" type=\"submit\" value=\"Create\" />
     ";
         // line 9
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
@@ -63,7 +63,7 @@ class __TwigTemplate_4a7e0dd1705ec3f1c142c6c0a5615eeb13f3f45487d16815f417cbaa1b4
 
 ";
         
-        $__internal_c2ce004d6d6bfea0b0c658ead35e43dc5ef448c0df05b228af1a879d9007b4d7->leave($__internal_c2ce004d6d6bfea0b0c658ead35e43dc5ef448c0df05b228af1a879d9007b4d7_prof);
+        $__internal_6568a905a10ce450a350b3a9074e24b994e3c9f503abb98de0ebba71b504f3bb->leave($__internal_6568a905a10ce450a350b3a9074e24b994e3c9f503abb98de0ebba71b504f3bb_prof);
 
     }
 
@@ -89,7 +89,7 @@ class __TwigTemplate_4a7e0dd1705ec3f1c142c6c0a5615eeb13f3f45487d16815f417cbaa1b4
 /* */
 /*     {{ form_start(form) }}*/
 /*         {{ form_widget(form) }}*/
-/*         <input type="submit" value="Create" />*/
+/*         <input class="btn btn-success" type="submit" value="Create" />*/
 /*     {{ form_end(form) }}*/
 /* */
 /*     <a class="btn btn-info" href="{{ path('tour_index') }}">Back to the list</a>*/

@@ -21,20 +21,20 @@ class __TwigTemplate_563d48075b5447d5de762cfa8e8e4e9e5cd52b2a7bc290eb9d80d918499
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_373b15ba08c14c8e5cab5dcebd089c24f02779ceaa03c64ff442ef435ced3c14 = $this->env->getExtension("native_profiler");
-        $__internal_373b15ba08c14c8e5cab5dcebd089c24f02779ceaa03c64ff442ef435ced3c14->enter($__internal_373b15ba08c14c8e5cab5dcebd089c24f02779ceaa03c64ff442ef435ced3c14_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
+        $__internal_8a0a7c1e28b0e73876fae912d2d44b33669313c91613ed98feaa812ff9748622 = $this->env->getExtension("native_profiler");
+        $__internal_8a0a7c1e28b0e73876fae912d2d44b33669313c91613ed98feaa812ff9748622->enter($__internal_8a0a7c1e28b0e73876fae912d2d44b33669313c91613ed98feaa812ff9748622_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_373b15ba08c14c8e5cab5dcebd089c24f02779ceaa03c64ff442ef435ced3c14->leave($__internal_373b15ba08c14c8e5cab5dcebd089c24f02779ceaa03c64ff442ef435ced3c14_prof);
+        $__internal_8a0a7c1e28b0e73876fae912d2d44b33669313c91613ed98feaa812ff9748622->leave($__internal_8a0a7c1e28b0e73876fae912d2d44b33669313c91613ed98feaa812ff9748622_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_cf27804f3ec5d6770d2abdc603947d5d94721a1529aa6a2002ca4c6b5cb87887 = $this->env->getExtension("native_profiler");
-        $__internal_cf27804f3ec5d6770d2abdc603947d5d94721a1529aa6a2002ca4c6b5cb87887->enter($__internal_cf27804f3ec5d6770d2abdc603947d5d94721a1529aa6a2002ca4c6b5cb87887_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_9194cef23fe1eadad032d3283754ad38a960b0686c1d54353233d76d159d245e = $this->env->getExtension("native_profiler");
+        $__internal_9194cef23fe1eadad032d3283754ad38a960b0686c1d54353233d76d159d245e->enter($__internal_9194cef23fe1eadad032d3283754ad38a960b0686c1d54353233d76d159d245e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "
@@ -43,7 +43,10 @@ class __TwigTemplate_563d48075b5447d5de762cfa8e8e4e9e5cd52b2a7bc290eb9d80d918499
       <div class=\"container\">
         <h1>Welcome to Europe Travel!</h1>
         <p>Travel to the four corners of the world,without going around in circles.</p>
-        <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">&raquo; Help me plan my trip</a></p>
+        <p><a class=\"btn btn-primary btn-lg\" href=\"";
+        // line 10
+        echo $this->env->getExtension('routing')->getPath("tour_new");
+        echo "\" role=\"button\">&raquo; Add new tour</a></p>
       </div>
     </div>
 
@@ -53,7 +56,7 @@ class __TwigTemplate_563d48075b5447d5de762cfa8e8e4e9e5cd52b2a7bc290eb9d80d918499
     </div> <!-- /container -->
 ";
         
-        $__internal_cf27804f3ec5d6770d2abdc603947d5d94721a1529aa6a2002ca4c6b5cb87887->leave($__internal_cf27804f3ec5d6770d2abdc603947d5d94721a1529aa6a2002ca4c6b5cb87887_prof);
+        $__internal_9194cef23fe1eadad032d3283754ad38a960b0686c1d54353233d76d159d245e->leave($__internal_9194cef23fe1eadad032d3283754ad38a960b0686c1d54353233d76d159d245e_prof);
 
     }
 
@@ -69,7 +72,7 @@ class __TwigTemplate_563d48075b5447d5de762cfa8e8e4e9e5cd52b2a7bc290eb9d80d918499
 
     public function getDebugInfo()
     {
-        return array (  40 => 4,  34 => 3,  11 => 1,);
+        return array (  48 => 10,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -81,7 +84,7 @@ class __TwigTemplate_563d48075b5447d5de762cfa8e8e4e9e5cd52b2a7bc290eb9d80d918499
 /*       <div class="container">*/
 /*         <h1>Welcome to Europe Travel!</h1>*/
 /*         <p>Travel to the four corners of the world,without going around in circles.</p>*/
-/*         <p><a class="btn btn-primary btn-lg" href="#" role="button">&raquo; Help me plan my trip</a></p>*/
+/*         <p><a class="btn btn-primary btn-lg" href="{{ path('tour_new') }}" role="button">&raquo; Add new tour</a></p>*/
 /*       </div>*/
 /*     </div>*/
 /* */

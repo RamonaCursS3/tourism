@@ -21,20 +21,20 @@ class __TwigTemplate_9b3f3924bd5d4c767063d2af4a1201c03c01a42d57961c63b3013451aa3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_affa456524cdccec37ce4cba49a90e1d0ae49b80236c85b1575dcc9927fc317c = $this->env->getExtension("native_profiler");
-        $__internal_affa456524cdccec37ce4cba49a90e1d0ae49b80236c85b1575dcc9927fc317c->enter($__internal_affa456524cdccec37ce4cba49a90e1d0ae49b80236c85b1575dcc9927fc317c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "touristattraction/index.html.twig"));
+        $__internal_20c4e7877a62ebddbc41940d811366f1981e72995cf1bd0007b010e000762ee6 = $this->env->getExtension("native_profiler");
+        $__internal_20c4e7877a62ebddbc41940d811366f1981e72995cf1bd0007b010e000762ee6->enter($__internal_20c4e7877a62ebddbc41940d811366f1981e72995cf1bd0007b010e000762ee6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "touristattraction/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_affa456524cdccec37ce4cba49a90e1d0ae49b80236c85b1575dcc9927fc317c->leave($__internal_affa456524cdccec37ce4cba49a90e1d0ae49b80236c85b1575dcc9927fc317c_prof);
+        $__internal_20c4e7877a62ebddbc41940d811366f1981e72995cf1bd0007b010e000762ee6->leave($__internal_20c4e7877a62ebddbc41940d811366f1981e72995cf1bd0007b010e000762ee6_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_c6dfb259e1b731713a43b724591793d6ba2772652ba251a59af7ba4106c9adf6 = $this->env->getExtension("native_profiler");
-        $__internal_c6dfb259e1b731713a43b724591793d6ba2772652ba251a59af7ba4106c9adf6->enter($__internal_c6dfb259e1b731713a43b724591793d6ba2772652ba251a59af7ba4106c9adf6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_7fde070eac5c0995ed25f4e293b3590ea2a76405a8974f05c2013eb354596392 = $this->env->getExtension("native_profiler");
+        $__internal_7fde070eac5c0995ed25f4e293b3590ea2a76405a8974f05c2013eb354596392->enter($__internal_7fde070eac5c0995ed25f4e293b3590ea2a76405a8974f05c2013eb354596392_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>TouristAttraction list</h1>
@@ -115,7 +115,7 @@ class __TwigTemplate_9b3f3924bd5d4c767063d2af4a1201c03c01a42d57961c63b3013451aa3
 
 ";
         
-        $__internal_c6dfb259e1b731713a43b724591793d6ba2772652ba251a59af7ba4106c9adf6->leave($__internal_c6dfb259e1b731713a43b724591793d6ba2772652ba251a59af7ba4106c9adf6_prof);
+        $__internal_7fde070eac5c0995ed25f4e293b3590ea2a76405a8974f05c2013eb354596392->leave($__internal_7fde070eac5c0995ed25f4e293b3590ea2a76405a8974f05c2013eb354596392_prof);
 
     }
 

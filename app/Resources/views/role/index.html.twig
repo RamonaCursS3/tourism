@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% set doc_links = {
+    'Users list':'admin_user',
+    'Roles list':'admin_role',
+
+    }
+%}
+{#'CSV files list':'csvfiles',#}
+<div class="col-sm-3 col-md-2 sidebar">
+
+    {% block submenu %}
+        <ul class="nav nav-sidebar">
+            {% for key,link in doc_links %}
+
+                    <li><a href="{{ path(link~'_index') }}">{{ key|trans }}</a></li>
+
+            {% endfor %}                       
+        </ul>
+    {% endblock %}
+
+</div>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1>Role list</h1>
+<div class="table-responsive">
+    <table class="table table-hover records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for role in roles %}
+            <tr>
+                <td><a href="{{ path('admin_role_show', { 'id': role.id }) }}">{{ role.id }}</a></td>
+                <td>{{ role.name }}</td>
+                <td>{{ role.role }}</td>
+                <td>
+                    <a class="btn btn-sm btn-info" href="{{ path('admin_role_show', { 'id': role.id }) }}">
+                        <span class="glyphicon glyphicon-share"></span> Show</a>
+
+                    <a class="btn btn-sm btn-default" href="{{ path('admin_role_edit', { 'id': role.id }) }}">
+                        <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                    
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<a class="btn btn-success" href="{{ path('admin_role_new') }}">Create a new entry</a>
+</div>
+{% endblock %}

@@ -21,23 +21,23 @@ class __TwigTemplate_8dd436e329a8746e1697b160968f49f6fc9d18e9919b5713b33a76a110e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2c6d414221ab05a56013ca38535ac9b04314cb5b50c0f93974a1a91f26a2fe07 = $this->env->getExtension("native_profiler");
-        $__internal_2c6d414221ab05a56013ca38535ac9b04314cb5b50c0f93974a1a91f26a2fe07->enter($__internal_2c6d414221ab05a56013ca38535ac9b04314cb5b50c0f93974a1a91f26a2fe07_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "hotel/new.html.twig"));
+        $__internal_ce8375739b1c53746a9bf39acef214b22f48ccd79e26bd82e1016ed18ac14b03 = $this->env->getExtension("native_profiler");
+        $__internal_ce8375739b1c53746a9bf39acef214b22f48ccd79e26bd82e1016ed18ac14b03->enter($__internal_ce8375739b1c53746a9bf39acef214b22f48ccd79e26bd82e1016ed18ac14b03_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "hotel/new.html.twig"));
 
         // line 2
         $this->env->getExtension('form')->renderer->setTheme((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), array(0 => ":Form:fields.html.twig"));
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_2c6d414221ab05a56013ca38535ac9b04314cb5b50c0f93974a1a91f26a2fe07->leave($__internal_2c6d414221ab05a56013ca38535ac9b04314cb5b50c0f93974a1a91f26a2fe07_prof);
+        $__internal_ce8375739b1c53746a9bf39acef214b22f48ccd79e26bd82e1016ed18ac14b03->leave($__internal_ce8375739b1c53746a9bf39acef214b22f48ccd79e26bd82e1016ed18ac14b03_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_0d6ecbd22cf653584d16530d829127a743cd99450401cb24d2496a8ae1486e74 = $this->env->getExtension("native_profiler");
-        $__internal_0d6ecbd22cf653584d16530d829127a743cd99450401cb24d2496a8ae1486e74->enter($__internal_0d6ecbd22cf653584d16530d829127a743cd99450401cb24d2496a8ae1486e74_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_542492134aa02068d9e4935e82a58d6be41b0c0ef8c2822ba6de2e328770122b = $this->env->getExtension("native_profiler");
+        $__internal_542492134aa02068d9e4935e82a58d6be41b0c0ef8c2822ba6de2e328770122b->enter($__internal_542492134aa02068d9e4935e82a58d6be41b0c0ef8c2822ba6de2e328770122b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Hotel creation</h1>
@@ -63,7 +63,7 @@ class __TwigTemplate_8dd436e329a8746e1697b160968f49f6fc9d18e9919b5713b33a76a110e
 
 ";
         
-        $__internal_0d6ecbd22cf653584d16530d829127a743cd99450401cb24d2496a8ae1486e74->leave($__internal_0d6ecbd22cf653584d16530d829127a743cd99450401cb24d2496a8ae1486e74_prof);
+        $__internal_542492134aa02068d9e4935e82a58d6be41b0c0ef8c2822ba6de2e328770122b->leave($__internal_542492134aa02068d9e4935e82a58d6be41b0c0ef8c2822ba6de2e328770122b_prof);
 
     }
 

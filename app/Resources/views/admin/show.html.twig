@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+{% form_theme delete_form ':Form:fields.html.twig' %}
+
+{% block body %}
+{% set doc_links = {
+    'Users list':'admin_user',
+    'Roles list':'admin_role',
+
+    }
+%}
+{#'CSV files list':'csvfiles',#}
+<div class="col-sm-3 col-md-2 sidebar">
+
+    {% block submenu %}
+        <ul class="nav nav-sidebar">
+            {% for key,link in doc_links %}
+
+                    <li><a href="{{ path(link~'_index') }}">{{ key|trans }}</a></li>
+
+            {% endfor %}                       
+        </ul>
+    {% endblock %}
+
+</div>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    
+    
+<h1>Show user</h1>
+<div class="col-lg-6">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover record_properties">
+            <tbody>
+                <tr>
+                    <th>{% trans %}Id{% endtrans %}</th>
+                    <td>{{ user.id }}</td>
+                </tr>
+                <tr>
+                    <th>{% trans %}User name{% endtrans %}</th>
+                    <td>{{ user.username }}</td>
+                </tr>
+                <tr>
+                    <th>{% trans %}Email{% endtrans %}</th>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <th>{% trans %}Role{% endtrans %}</th>
+                    <td>
+                        {% for role in user.roles %}
+                            {{ role }}
+                        {% endfor %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    {{ form_start(delete_form, {'attr': {'role':'form', 'class':'form-horizontal'}}) }}
+
+        {{ form_widget(delete_form) }}
+
+    {{ form_end(delete_form) }}
+
+</div>
+</div>
+{% endblock %}
