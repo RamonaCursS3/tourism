@@ -3,10 +3,84 @@
 {% block body %}
     <h1>TouristAttraction creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input class="btn btn-success" type="submit" value="Create" />
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+    {{ form_errors(form) }}
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                {{ form_label(form.name, 'Name', {'label_attr': {'class': 'col-lg-4 control-label'}}) }}
+                {{ form_errors(form.name) }}
+                <div class="col-lg-6">
+                    {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>     
+            <div class="form-group">
+                {{ form_label(form.description, 'Description', {'label_attr': {'class': 'col-lg-4 control-label'}}) }}
+                {{ form_errors(form.description) }}
+                <div class="col-lg-6">
+                    {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>  
+            <div class="form-group">
+                {{ form_label(form.contact_details, 'Contact details', {'label_attr': {'class': 'col-lg-4 control-label'}}) }}
+                {{ form_errors(form.contact_details) }}
+                <div class="col-lg-6">
+                    {{ form_widget(form.contact_details, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>              
+            <div class="form-group">
+                {{ form_label(form.website, 'Website', {'label_attr': {'class': 'col-lg-4 control-label'}}) }}
+                {{ form_errors(form.website) }}
+                <div class="col-lg-6">
+                    {{ form_widget(form.website, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>              
+            <div class="form-group">
+                {{ form_label(form.opening_hours, 'Opening hours', {'label_attr': {'class': 'col-lg-4 control-label'}}) }}
+                {{ form_errors(form.opening_hours) }}
+                <div class="col-lg-6">
+                    {{ form_widget(form.opening_hours, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>      
+            <div class="form-group">
+                {{ form_label(form.city, 'City', {'label_attr': {'class': 'col-lg-4 control-label'}}) }}
+                {{ form_errors(form.city) }}
+                <div class="col-lg-6">
+                    {{ form_widget(form.city, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>   
+        </div>   
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <div class="wrap-playvideos">
+                    <h3>Tourist Attraction images</h3>
+                    <ul style="list-style: none" class="images" data-prototype="{{ form_widget(form.images.vars.prototype)|e }}">
+                        {% for image in form.images %}
+                            <li>{{ form_widget(image) }}</li>
+                        {% endfor %}
+                    </ul>         
+                </div>
+            </div>
+        </div> 
+    </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-2">
+                        {{ form_widget(form.submit, { 'label': 'Create', 'attr': {'class': 'btn btn-success'}}) }}
+                    </div>
+                </div>                       
+            </div>
+       </div>
+        {{ form_widget(form.images) }}
     {{ form_end(form) }}
 
     <a class="btn btn-info" href="{{ path('touristattraction_index') }}">Back to the list</a>
+{% endblock %}
+{% block javascript %}
+     {{ parent() }}
+     <script type="text/javascript" src="{{ asset('js/tourist_attraction.js') }}"></script>    
+     
 {% endblock %}

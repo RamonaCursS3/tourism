@@ -3,15 +3,76 @@
 {% block body %}
     <h1>TouristAttraction edit</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input class="btn btn-warning" type="submit" value="Edit" />
+    {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }}
+    {{ form_errors(edit_form) }}
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                {{ form_label(edit_form.name, 'Name', {'label_attr': {'class': 'col-lg-4 control-label'}}) }}
+                {{ form_errors(edit_form.name) }}
+                <div class="col-lg-6">
+                    {{ form_widget(edit_form.name, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>     
+            <div class="form-group">
+                {{ form_label(edit_form.description, 'Description', {'label_attr': {'class': 'col-lg-4 control-label'}}) }}
+                {{ form_errors(edit_form.description) }}
+                <div class="col-lg-6">
+                    {{ form_widget(edit_form.description, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>  
+            <div class="form-group">
+                {{ form_label(edit_form.contact_details, 'Contact details', {'label_attr': {'class': 'col-lg-4 control-label'}}) }}
+                {{ form_errors(edit_form.contact_details) }}
+                <div class="col-lg-6">
+                    {{ form_widget(edit_form.contact_details, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>              
+            <div class="form-group">
+                {{ form_label(edit_form.website, 'Website', {'label_attr': {'class': 'col-lg-4 control-label'}}) }}
+                {{ form_errors(edit_form.website) }}
+                <div class="col-lg-6">
+                    {{ form_widget(edit_form.website, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>              
+            <div class="form-group">
+                {{ form_label(edit_form.opening_hours, 'Opening hours', {'label_attr': {'class': 'col-lg-4 control-label'}}) }}
+                {{ form_errors(edit_form.opening_hours) }}
+                <div class="col-lg-6">
+                    {{ form_widget(edit_form.opening_hours, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>      
+            <div class="form-group">
+                {{ form_label(edit_form.city, 'City', {'label_attr': {'class': 'col-lg-4 control-label'}}) }}
+                {{ form_errors(edit_form.city) }}
+                <div class="col-lg-6">
+                    {{ form_widget(edit_form.city, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>   
+        </div>   
+    </div>
+        <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <div class="wrap-playvideos">
+                    <h3>Tourist Attraction images</h3>
+                    <ul style="list-style: none" class="images" data-prototype="{{ form_widget(edit_form.images.vars.prototype)|e }}">
+                        {% for image in edit_form.images %}
+                            <li>{{ form_widget(image) }}</li>
+                        {% endfor %}
+                    </ul>         
+                </div>
+            </div>
+        </div> 
+    </div>
+        <input class="btn btn-success" type="submit" value="Create" />
+        {{ form_widget(edit_form.images) }}
     {{ form_end(edit_form) }}
 
     <a class="btn btn-info" href="{{ path('touristattraction_index') }}">Back to the list</a>
-
-    {{ form_start(delete_form) }}
-        <input class="btn btn-danger" type="submit" value="Delete">
-    {{ form_end(delete_form) }}
-
+{% endblock %}
+{% block javascript %}
+     {{ parent() }}
+     <script type="text/javascript" src="{{ asset('js/tourist_attraction.js') }}"></script>    
+     
 {% endblock %}

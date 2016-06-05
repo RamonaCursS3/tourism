@@ -44,7 +44,7 @@ class Hotel
     
     /**
      * 
-     * * @ORM\OneToMany(targetEntity="Tour", mappedBy="hotels")
+     * * @ORM\ManyToMany(targetEntity="Tour", mappedBy="hotels")
      * 
      */
     private $tour;

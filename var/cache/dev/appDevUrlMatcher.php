@@ -421,6 +421,68 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
                 not_tour_delete:
 
+                if (0 === strpos($pathinfo, '/member/touristattractionimage')) {
+                    // touristattractionimage_index
+                    if (rtrim($pathinfo, '/') === '/member/touristattractionimage') {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_touristattractionimage_index;
+                        }
+
+                        if (substr($pathinfo, -1) !== '/') {
+                            return $this->redirect($pathinfo.'/', 'touristattractionimage_index');
+                        }
+
+                        return array (  '_controller' => 'AppBundle\\Controller\\TouristAttractionImageController::indexAction',  '_route' => 'touristattractionimage_index',);
+                    }
+                    not_touristattractionimage_index:
+
+                    // touristattractionimage_show
+                    if (preg_match('#^/member/touristattractionimage/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_touristattractionimage_show;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'touristattractionimage_show')), array (  '_controller' => 'AppBundle\\Controller\\TouristAttractionImageController::showAction',));
+                    }
+                    not_touristattractionimage_show:
+
+                    // touristattractionimage_new
+                    if ($pathinfo === '/member/touristattractionimage/new') {
+                        if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                            goto not_touristattractionimage_new;
+                        }
+
+                        return array (  '_controller' => 'AppBundle\\Controller\\TouristAttractionImageController::newAction',  '_route' => 'touristattractionimage_new',);
+                    }
+                    not_touristattractionimage_new:
+
+                    // touristattractionimage_edit
+                    if (preg_match('#^/member/touristattractionimage/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                            goto not_touristattractionimage_edit;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'touristattractionimage_edit')), array (  '_controller' => 'AppBundle\\Controller\\TouristAttractionImageController::editAction',));
+                    }
+                    not_touristattractionimage_edit:
+
+                    // touristattractionimage_delete
+                    if (preg_match('#^/member/touristattractionimage/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                        if ($this->context->getMethod() != 'DELETE') {
+                            $allow[] = 'DELETE';
+                            goto not_touristattractionimage_delete;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'touristattractionimage_delete')), array (  '_controller' => 'AppBundle\\Controller\\TouristAttractionImageController::deleteAction',));
+                    }
+                    not_touristattractionimage_delete:
+
+                }
+
             }
 
         }
@@ -700,6 +762,50 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_role_delete')), array (  '_controller' => 'AppBundle\\Controller\\RoleController::deleteAction',));
                 }
                 not_admin_role_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/admin/csvfiles')) {
+                // csvfiles_index
+                if (rtrim($pathinfo, '/') === '/admin/csvfiles') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_csvfiles_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'csvfiles_index');
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\CsvFilesController::indexAction',  '_route' => 'csvfiles_index',);
+                }
+                not_csvfiles_index:
+
+                // csvfiles_new
+                if ($pathinfo === '/admin/csvfiles/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_csvfiles_new;
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\CsvFilesController::newAction',  '_route' => 'csvfiles_new',);
+                }
+                not_csvfiles_new:
+
+                // csvfiles_create
+                if ($pathinfo === '/admin/csvfiles/create') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\CsvFilesController::createAction',  '_route' => 'csvfiles_create',);
+                }
+
+                // csvfiles_delete
+                if (preg_match('#^/admin/csvfiles/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'csvfiles_delete')), array (  '_controller' => 'AppBundle\\Controller\\CsvFilesController::deleteAction',));
+                }
+
+                // csvfiles_importa
+                if (preg_match('#^/admin/csvfiles/(?P<id>[^/]++)/(?P<tip>[^/]++)/importa$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'csvfiles_importa')), array (  '_controller' => 'AppBundle\\Controller\\CsvFilesController::importaAction',));
+                }
 
             }
 

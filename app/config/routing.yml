@@ -30,7 +30,7 @@ app_admin_role:
     resource: "@AppBundle/Resources/config/routing/role.yml"
     prefix:   /admin/role
     
-#app_admin_csvfiles:
-#    resource: "@AppBundle/Resources/config/routing/csvfiles.yml"
-#    prefix:   /admin/csvfiles   
+app_admin_csvfiles:
+    resource: "@AppBundle/Resources/config/routing/csvfiles.yml"
+    prefix:   /admin/csvfiles   
 

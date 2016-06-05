@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>TouristAttractionImage list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Path</th>
+                <th>Datcre</th>
+                <th>Datupd</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for touristAttractionImage in touristAttractionImages %}
+            <tr>
+                <td><a href="{{ path('touristattractionimage_show', { 'id': touristAttractionImage.id }) }}">{{ touristAttractionImage.id }}</a></td>
+                <td>{{ touristAttractionImage.name }}</td>
+                <td>{{ touristAttractionImage.path }}</td>
+                <td>{% if touristAttractionImage.datCre %}{{ touristAttractionImage.datCre|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if touristAttractionImage.datUpd %}{{ touristAttractionImage.datUpd|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('touristattractionimage_show', { 'id': touristAttractionImage.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('touristattractionimage_edit', { 'id': touristAttractionImage.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('touristattractionimage_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

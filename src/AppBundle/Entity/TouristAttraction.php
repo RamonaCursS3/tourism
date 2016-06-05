@@ -56,10 +56,18 @@ class TouristAttraction
     
     /**
      * 
-     * @ORM\OneToMany(targetEntity="Tour", mappedBy="tourist_attraction")
+     * @ORM\ManyToMany(targetEntity="Tour", mappedBy="tourist_attractions")
      * 
      */
     private $tour; 
+    
+    /**
+     * 
+     * @ORM\OneToMany(targetEntity="TouristAttractionImage", mappedBy="touristAttraction", cascade={"persist"})
+     * 
+     * 
+     */
+    private $images;
     
     
     public function __toString() {
@@ -242,5 +250,71 @@ class TouristAttraction
     public function getTour()
     {
         return $this->tour;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tour = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add tour
+     *
+     * @param \AppBundle\Entity\Tour $tour
+     *
+     * @return TouristAttraction
+     */
+    public function addTour(\AppBundle\Entity\Tour $tour)
+    {
+        $this->tour[] = $tour;
+
+        return $this;
+    }
+
+    /**
+     * Remove tour
+     *
+     * @param \AppBundle\Entity\Tour $tour
+     */
+    public function removeTour(\AppBundle\Entity\Tour $tour)
+    {
+        $this->tour->removeElement($tour);
+    }
+
+    /**
+     * Add image
+     *
+     * @param \AppBundle\Entity\TouristAttractionImage $image
+     *
+     * @return TouristAttraction
+     */
+    public function addImage(\AppBundle\Entity\TouristAttractionImage $image)
+    {
+        $image->setTouristAttraction($this);
+        
+        $this->images->add($image);
+    }
+
+    /**
+     * Remove image
+     *
+     * @param \AppBundle\Entity\TouristAttractionImage $image
+     */
+    public function removeImage(\AppBundle\Entity\TouristAttractionImage $image)
+    {
+        $this->images->removeElement($image);
+    }
+
+    /**
+     * Get images
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getImages()
+    {
+        return $this->images;
     }
 }

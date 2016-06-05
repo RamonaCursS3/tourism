@@ -3,8 +3,12 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Doctrine\ORM\EntityRepository;
 
 class TouristAttractionType extends AbstractType
 {
@@ -20,7 +24,22 @@ class TouristAttractionType extends AbstractType
             ->add('contact_details')
             ->add('website')
             ->add('opening_hours')
-            ->add('city')
+            ->add('city', EntityType::class, array(
+                'class'         => 'AppBundle:City',
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('c')
+                        ->orderBy('c.name', 'ASC');
+                },
+                'multiple'       => false,
+                'expanded'       => false,
+            ))
+            ->add('images', CollectionType::class, array(
+                    'entry_type'   => TouristAttractionImageType::class,
+                    'allow_add'    => true,
+                    'by_reference' => false,
+                    'allow_delete' => true,
+                    'label'        => false
+                ))
         ;
     }
     

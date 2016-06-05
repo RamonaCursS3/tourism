@@ -19,6 +19,16 @@
                 <td>{{ touristAttraction.description }}</td>
             </tr>
             <tr>
+                <th>Images</th>
+                <td>
+                    {% for image in touristAttraction.images %}
+                        <a href="{{ asset(image.getWebPath) }}">
+                            <img src="{{ asset(image.getWebPath) }}" class="img-responsive" alt="{{ image.getName }}" width="150" />
+                        </a>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
                 <th>Contact_details</th>
                 <td>{{ touristAttraction.contactdetails }}</td>
             </tr>
