@@ -44,7 +44,7 @@ class Tour
      * @ORM\OneToOne(targetEntity="Country")
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
      **/
-    private $county;
+    private $country;
     
     /**
      * 
