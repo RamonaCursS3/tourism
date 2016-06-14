@@ -20,9 +20,15 @@ class TourController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        $repository = $this->getDoctrine()
+            ->getRepository('AppBundle:Tour');
+        $query = $repository->createQueryBuilder('t')
+            ->where('t.name > :name')
+            ->setParameter('name', '')
+            ->orderBy('t.length', 'ASC')
+            ->getQuery();
 
-        $tours = $em->getRepository('AppBundle:Tour')->findAll();
+        $tours = $query->getResult();
 
         return $this->render('tour/index.html.twig', array(
             'tours' => $tours,
@@ -73,6 +79,11 @@ class TourController extends Controller
      */
     public function editAction(Request $request, Tour $tour)
     {
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+
+        $logger = $this->get('logger');
+        $logger->info('User '.$user.' modified a tour');
+
         $deleteForm = $this->createDeleteForm($tour);
         $editForm = $this->createForm('AppBundle\Form\TourType', $tour);
         $editForm->handleRequest($request);
@@ -98,6 +109,11 @@ class TourController extends Controller
      */
     public function deleteAction(Request $request, Tour $tour)
     {
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+
+        $logger = $this->get('logger');
+        $logger->info('User '.$user.' deleted a tour');
+        
         $form = $this->createDeleteForm($tour);
         $form->handleRequest($request);
 
