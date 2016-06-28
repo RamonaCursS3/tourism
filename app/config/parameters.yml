@@ -2,11 +2,11 @@
 parameters:
     database_host: 127.0.0.1
     database_port: null
-    database_name: tourism
+    database_name: null
     database_user: root
     database_password: null
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
     mailer_password: null
-    secret: 9b58b724955a8f2a66dc49f19e071fa5d92d6a18
+    secret: null
