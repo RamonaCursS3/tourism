@@ -27,9 +27,7 @@ class FindTourCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $country_name = $input->getArgument('country_name');
-              
-        $tours_found = '';
-        
+                
         $tours_found = $this->getContainer()->get('find_tour')->findTourIn($country_name); 
         
         if ($tours_found){

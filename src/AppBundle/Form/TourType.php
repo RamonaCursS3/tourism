@@ -19,7 +19,7 @@ class TourType extends AbstractType
             ->add('description')
             ->add('length')
             ->add('travel_type')
-            ->add('county')
+            ->add('country')
             ->add('cities')
             ->add('hotels')
             ->add('tourist_attractions')

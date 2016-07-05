@@ -7,4 +7,7 @@ services:
     find_tour:
         class:  AppBundle\Services\FindTour
         arguments:  ['@doctrine.orm.entity_manager']
+    file_uploader:
+        class: AppBundle\Services\FileUploader
+        arguments: ['uploads_directory']
 

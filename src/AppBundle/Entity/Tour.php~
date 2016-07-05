@@ -31,7 +31,7 @@ class Tour
     private $description;
     
     /**
-     * @ORM\Column(name="length", type="integer")
+     * @ORM\Column(name="length", type="string")
      */
     private $length;
     
@@ -44,18 +44,18 @@ class Tour
      * @ORM\OneToOne(targetEntity="Country")
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
      **/
-    private $county;
+    private $country;
     
     /**
      * 
-     * @ORM\ManyToOne(targetEntity="Tour", inversedBy="tour")
+     * @ORM\ManyToMany(targetEntity="City", inversedBy="tour")
      * 
      * 
      */
     private $cities;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Tour", inversedBy="tour")
+     * @ORM\ManyToMany(targetEntity="Hotel", inversedBy="tour")
      * 
      * 
      */
@@ -64,7 +64,7 @@ class Tour
     /**
      * 
      * 
-     * @ORM\ManyToOne(targetEntity="Tour", inversedBy="tour")
+     * @ORM\ManyToMany(targetEntity="TouristAttraction", inversedBy="tour")
      * 
      */
     private $tourist_attractions;
@@ -188,27 +188,27 @@ class Tour
     }
 
     /**
-     * Set county
+     * Set country
      *
-     * @param \AppBundle\Entity\Country $county
+     * @param \AppBundle\Entity\Country $country
      *
      * @return Tour
      */
-    public function setCounty(\AppBundle\Entity\Country $county = null)
+    public function setCountry(\AppBundle\Entity\Country $country = null)
     {
-        $this->county = $county;
+        $this->country = $country;
 
         return $this;
     }
 
     /**
-     * Get county
+     * Get country
      *
      * @return \AppBundle\Entity\Country
      */
-    public function getCounty()
+    public function getCountry()
     {
-        return $this->county;
+        return $this->country;
     }
 
     /**
@@ -311,5 +311,47 @@ class Tour
     public function getTouristAttractions()
     {
         return $this->tourist_attractions;
+    }
+
+    /**
+     * Set cities
+     *
+     * @param \AppBundle\Entity\Tour $cities
+     *
+     * @return Tour
+     */
+    public function setCities(\AppBundle\Entity\Tour $cities = null)
+    {
+        $this->cities = $cities;
+
+        return $this;
+    }
+
+    /**
+     * Set hotels
+     *
+     * @param \AppBundle\Entity\Tour $hotels
+     *
+     * @return Tour
+     */
+    public function setHotels(\AppBundle\Entity\Tour $hotels = null)
+    {
+        $this->hotels = $hotels;
+
+        return $this;
+    }
+
+    /**
+     * Set touristAttractions
+     *
+     * @param \AppBundle\Entity\Tour $touristAttractions
+     *
+     * @return Tour
+     */
+    public function setTouristAttractions(\AppBundle\Entity\Tour $touristAttractions = null)
+    {
+        $this->tourist_attractions = $touristAttractions;
+
+        return $this;
     }
 }

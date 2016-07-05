@@ -188,27 +188,27 @@ class Tour
     }
 
     /**
-     * Set county
+     * Set country
      *
-     * @param \AppBundle\Entity\Country $county
+     * @param \AppBundle\Entity\Country $country
      *
      * @return Tour
      */
-    public function setCounty(\AppBundle\Entity\Country $county = null)
+    public function setCountry(\AppBundle\Entity\Country $country = null)
     {
-        $this->county = $county;
+        $this->country = $country;
 
         return $this;
     }
 
     /**
-     * Get county
+     * Get country
      *
      * @return \AppBundle\Entity\Country
      */
-    public function getCounty()
+    public function getCountry()
     {
-        return $this->county;
+        return $this->country;
     }
 
     /**

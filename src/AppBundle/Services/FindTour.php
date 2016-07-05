@@ -4,6 +4,7 @@ namespace AppBundle\Services;
 
 use Doctrine\ORM\EntityManager;
 use AppBundle\Entity\Country;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
 /**
@@ -30,7 +31,11 @@ class FindTour {
     function findTourIn($country_name){
         $em = $this->em;
         $country = $em->getRepository('AppBundle:Country')->findOneByName($country_name);
-        $country_to_search = $country->getId();
+        if(isset($country)){
+            $country_to_search = $country->getId();
+        }else{
+            throw new NotFoundHttpException('There isn\'t any tour in'.' '.$country_name);
+        }
         $query = $em->createQuery(
             'SELECT t
             FROM AppBundle:Tour t
