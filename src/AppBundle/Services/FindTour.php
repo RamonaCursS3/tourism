@@ -9,7 +9,7 @@ use AppBundle\Entity\Country;
 /**
  * Description of Syncronize
  *
- * @author catalin
+ * @author ramona
  */
 class FindTour {
 
@@ -23,7 +23,7 @@ class FindTour {
     
      
     /*
-     * update our stocks
+     * find a tour by providing country name
      * @var 
      */
 
